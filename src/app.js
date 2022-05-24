@@ -28,11 +28,6 @@ app.get('/create',function(req,res)
 {
     res.render('users')
 })
-/*
-app.get('/index',function(req,res){
-    res.render('index')
-})
-*/
 app.get('/',async function(req,res){
     const users = await user.find();
     console.log(users);
