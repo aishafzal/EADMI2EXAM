@@ -5,6 +5,15 @@
     <body>
         <%-include('nav') -%>
         <form action="user/create" method="post" enctype="multipart/form-data">
+
+            <div class="col-4">
+                <div class='circle'>
+                  <img src="http://wallpaper.pickywallpapers.com/1920x1080/mark-wahlberg-front-profile.jpg" alt="" onload='fixAspect(this);'>
+                </div>
+              
+              </div>
+
+
       <label>
           NAME
       </label>
@@ -24,7 +33,7 @@
 <label>
     City
   </label>
-  <input type="number" name="city"/>
+  <input type="text" name="city"/>
 </br></br></br>
 
 <label>
@@ -33,12 +42,9 @@
   <input type="number" name="postcode"/>
 </br></br></br>
 
-
-
-    <label>Select Image</label>
     <input type="file" name="image">
 </br></br></br>
-<label>ADD USER</label>
+
 <input type="submit" value="Submit"/>
 </form>
 

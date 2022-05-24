@@ -21,19 +21,17 @@
     <input type="number" name="phone" value="<%= user.phone %> "/>
 </br></br></br>
 <label>
-    PHONE
+   City
   </label>
-  <input type="number" name="city" value="<%= user.city %> "/>
+  <input type="text" name="city" value="<%= user.city %> "/>
 </br></br></br>
 <label>
-    PHONE
+   Postcode
   </label>
   <input type="number" name="postcode" value="<%= user.postcode %> "/>
 </br></br></br>
 
 
-
-    <label>Select Image</label>
     <input type="file" name="image">
     <img src="/<%= user.image %>" width="100">
     <input type="'hidden" name="old_image" value="<%= user.image %>"/>

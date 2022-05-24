@@ -2,15 +2,15 @@ const express =require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const bodyparser = require('body-parser');
-const user = require('./user');
+const user = require('./model/user');
 const fs = require('fs');
 mongoose.connect('mongodb://127.0.0.1:27017/eadmid2');
 const app = express();
-
 app.set('view engine','ejs');
 app.use('/public',express.static('public'));
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
+
 
 var storage = multer.diskStorage({
     destination:function(req,file,cb){
@@ -24,18 +24,15 @@ var upload = multer({
     storage:storage,
 }).single('image');
 
-app.get('/nav',function(req,res)
-{;
-    res.render('nav')
-})
-
 app.get('/create',function(req,res)
 {
     res.render('users')
 })
+/*
 app.get('/index',function(req,res){
     res.render('index')
 })
+*/
 app.get('/',async function(req,res){
     const users = await user.find();
     console.log(users);
@@ -56,7 +53,7 @@ app.get('/edit/:id',function(req,res){
     user.findById(id,function(err,user){
         if(err)
         {res.redirect('/');}
-        else res.render('editusers',{user:user})
+        else res.render('edituser',{user:user})
     })
 })
 

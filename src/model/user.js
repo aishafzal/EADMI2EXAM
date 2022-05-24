@@ -9,5 +9,5 @@ const userSchema = new Schema({
     image:'String'
 })
 
-const user = new mongoose.model('user',userSchema);
+const user = new mongoose.model('users',userSchema);
 module.exports = user;
